@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardWebApp", "DashboardWebApp\DashboardWebApp.csproj", "{C906ED1F-B50B-4682-A113-1BEF1EFFCB61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardWebAPI", "DashboardWebAPI\DashboardWebAPI.csproj", "{8ECF8181-89EE-4BEB-9FD7-FBFA62BFA59A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C906ED1F-B50B-4682-A113-1BEF1EFFCB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C906ED1F-B50B-4682-A113-1BEF1EFFCB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C906ED1F-B50B-4682-A113-1BEF1EFFCB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C906ED1F-B50B-4682-A113-1BEF1EFFCB61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ECF8181-89EE-4BEB-9FD7-FBFA62BFA59A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ECF8181-89EE-4BEB-9FD7-FBFA62BFA59A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ECF8181-89EE-4BEB-9FD7-FBFA62BFA59A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ECF8181-89EE-4BEB-9FD7-FBFA62BFA59A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF738DC2-D22B-4651-B9A8-D4CA96100FE1}
+	EndGlobalSection
+EndGlobal

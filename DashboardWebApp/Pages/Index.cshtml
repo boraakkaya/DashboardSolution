@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h1>Dashboard</h1>
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Product</th>
+            <th>Created</th>           
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Company</th>
+            <th>Product</th>
+            <th>Created</th>
+        </tr>
+    </tfoot>
+</table>
+    @section Scripts{
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+        <script type="text/javascript">            
+            $(document).ready(function () {
+                $('#example').DataTable({
+                    "processing": true,
+                    "serverSide": true,
+                    "pageLength":4,
+                    "columns": [{ name: "Company" }, { name: "Product" }, { name: "Created" }],                    
+                    "ajax": {
+                        url: "https://localhost:44386/api/values",
+                        method: "POST",
+                        contentType: "application/json",
+                        dataType: "json",
+                        data: function (d) {
+                            var content = JSON.stringify(d);
+                            return content;
+                        }
+                    }
+                });
+            });
+        </script>
+    }

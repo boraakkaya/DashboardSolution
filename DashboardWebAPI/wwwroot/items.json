@@ -1,0 +1,72 @@
+﻿[
+  {
+    "Company": "HP",
+    "Product": "Product A",
+    "Created": "10/10/2010"
+  },
+  {
+    "Company": "HP",
+    "Product": "Product B",
+    "Created": "11/11/2011"
+  },
+  {
+    "Company": "Microsoft",
+    "Product": "SQL Server",
+    "Created": "11/11/2005"
+  },
+  {
+    "Company": "Microsoft",
+    "Product": "SharePoint 2007",
+    "Created": "11/11/2004"
+  },
+  {
+    "Company": "Microsoft",
+    "Product": "SharePoint 2010",
+    "Created": "01/01/2011"
+  },
+  {
+    "Company": "Microsoft",
+    "Product": "SharePoint 2013",
+    "Created": "02/01/2009"
+  },
+  {
+    "Company": "Microsoft",
+    "Product": "Excel",
+    "Created": "05/06/2004"
+  },
+  {
+    "Company": "Microsoft",
+    "Product": "Word",
+    "Created": "08/09/2001"
+  },
+  {
+    "Company": "Apple",
+    "Product": "iPad",
+    "Created": "06/07/2018"
+  },
+  {
+    "Company": "Apple",
+    "Product": "iPhone",
+    "Created": "09/07/2017"
+  },
+  {
+    "Company": "Apple",
+    "Product": "iPod",
+    "Created": "05/04/2001"
+  },
+  {
+    "Company": "Intuits",
+    "Product": "Quickbooks",
+    "Created": "06/25/1999"
+  },
+  {
+    "Company": "Intuits",
+    "Product": "SalesBook",
+    "Created": "06/30/1998"
+  },
+  {
+    "Company": "Intuits",
+    "Product": "CustomerBase",
+    "Created": "05/25/1998"
+  }
+]
