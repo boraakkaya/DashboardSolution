@@ -7,16 +7,22 @@
 <table id="example" class="display" style="width:100%">
     <thead>
         <tr>
-            <th>Company</th>
-            <th>Product</th>
-            <th>Created</th>           
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Position</th>
+            <th>Status</th>
+            <th>Birthday</th>
         </tr>
     </thead>
     <tfoot>
         <tr>
-            <th>Company</th>
-            <th>Product</th>
-            <th>Created</th>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Position</th>
+            <th>Status</th>
+            <th>Birthday</th>
         </tr>
     </tfoot>
 </table>
@@ -28,16 +34,19 @@
                 $('#example').DataTable({
                     "processing": true,
                     "serverSide": true,
-                    "pageLength":4,
-                    "columns": [{ name: "Company" }, { name: "Product" }, { name: "Created" }],                    
+                    "pageLength":10,
+                    "columns": [{ name: "ID", type: "num" }, { name: "FirstName" }, { name: "LastName" }, { name: "Position" }, { name: "Status" }, { name: "Birthday", type: "date" }],                    
                     "ajax": {
-                        url: "https://localhost:44386/api/values",
+                        url: "https://customersdashboardwebapi.azurewebsites.net/api/customers",
                         method: "POST",
                         contentType: "application/json",
                         dataType: "json",
                         data: function (d) {
+                            //d.myKey = "myValue";
+                            console.log("d is ", d);
                             var content = JSON.stringify(d);
                             return content;
+                            
                         }
                     }
                 });
