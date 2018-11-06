@@ -108,12 +108,12 @@ namespace WebAPI.Controllers
             {
 
                 List<string> endPointsToCall = new List<string>();
-                int itemIDCeiling = 250; //ID ceiling for each call
+                int itemIDCeiling = 5000; //ID ceiling for each call
 
                 int totalCallCount = Convert.ToInt32(Math.Ceiling((double)spRequestItemCount / (double)itemIDCeiling));
                 for (int x = 0; x < totalCallCount; x++)
                 {
-                    endPointsToCall.Add($"https://boraakkaya.sharepoint.com/_api/web/lists/getbytitle('HugeList')/items?$filter=ID ge {x * itemIDCeiling} and ID lt {(x + 1) * itemIDCeiling}&$top={itemIDCeiling}");
+                    endPointsToCall.Add($"https://boraakkaya.sharepoint.com/_api/web/lists/getbytitle('HugeList')/items?$select=ID,FirstName,LastName,Position,Status,Birthday&$filter=ID ge {x * itemIDCeiling} and ID lt {(x + 1) * itemIDCeiling}&$top={itemIDCeiling}");
                 }
 
                 HttpClient client = new HttpClient();
