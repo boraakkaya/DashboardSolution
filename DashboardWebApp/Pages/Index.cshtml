@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Home page";
 }
+@*Next Line of code is important*@
+@Html.AntiForgeryToken()
 <h1>Dashboard</h1>
 <table id="example" class="display" style="width:100%">
     <thead>
@@ -26,30 +28,35 @@
         </tr>
     </tfoot>
 </table>
-    @section Scripts{
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-        <script type="text/javascript">            
-            $(document).ready(function () {
-                $('#example').DataTable({
-                    "processing": true,
-                    "serverSide": true,
-                    "pageLength":10,
-                    "columns": [{ name: "ID", type: "num" }, { name: "FirstName" }, { name: "LastName" }, { name: "Position" }, { name: "Status" }, { name: "Birthday", type: "date" }],                    
-                    "ajax": {
-                        url: "https://customersdashboardwebapi.azurewebsites.net/api/customers",
-                        method: "POST",
-                        contentType: "application/json",
-                        dataType: "json",
-                        data: function (d) {
-                            //d.myKey = "myValue";
-                            console.log("d is ", d);
-                            var content = JSON.stringify(d);
-                            return content;
-                            
-                        }
+@section Scripts{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "pageLength": 10,
+                "columns": [{ name: "ID", type: "num" }, { name: "FirstName" }, { name: "LastName" }, { name: "Position" }, { name: "Status" }, { name: "Birthday", type: "date" }],
+                "ajax": {
+                    //We have to set below header for POST requests to Handlers
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("RequestVerificationToken",
+                            $('input:hidden[name="__RequestVerificationToken"]').val());
+                    },
+                    url: "/?handler=Dashboard",
+                    method: "POST",
+                    contentType: "application/json",
+                    dataType: "json",
+                    data: function (d) {
+                        //d.myKey = "myValue";
+                        console.log("d is ", d);
+                        var content = JSON.stringify(d);
+                        return content;
+
                     }
-                });
+                }
             });
-        </script>
-    }
+        });
+    </script>
+}
