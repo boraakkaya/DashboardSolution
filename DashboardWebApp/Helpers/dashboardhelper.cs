@@ -35,8 +35,7 @@ namespace DashboardWebApp.Helpers
             string requestUrl = "https://customersdashboardwebapi.azurewebsites.net/api/customers";
             HttpRequestMessage message = new HttpRequestMessage(new HttpMethod("POST"), requestUrl);
             message.Content = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.SendAsync(message);
-            //DataResponse jsonContent = JsonConvert.DeserializeObject<DataResponse>(response.Content.ReadAsStringAsync().Result);
+            HttpResponseMessage response = await client.SendAsync(message);            
             DataResponse jsonContent = await response.Content.ReadAsAsync<DataResponse>();
             return new JsonResult(jsonContent);
 
